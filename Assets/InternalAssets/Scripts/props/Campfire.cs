@@ -5,6 +5,7 @@ public class Campfire : MonoBehaviour
     [SerializeField] private GameObject textBubble;
 
     private Animator aFire;
+    private AudioSource asCampfire;
     private ParticleSystem psSmoke;
 
     private bool isBurning = false;
@@ -12,6 +13,7 @@ public class Campfire : MonoBehaviour
     void Start()
     {
         aFire = GetComponentInChildren<Animator>();
+        asCampfire = GetComponent<AudioSource>();
         psSmoke = GetComponentInChildren<ParticleSystem>();
     }
 
@@ -26,12 +28,14 @@ public class Campfire : MonoBehaviour
             {
                 isBurning = false;
                 aFire.SetBool("isBurning", false);
+                asCampfire.Stop();
                 psSmoke.Stop();
             }
         else
             {
                 isBurning = true;
                 aFire.SetBool("isBurning", true);
+                asCampfire.Play();
                 psSmoke.Play();
             }
     }
