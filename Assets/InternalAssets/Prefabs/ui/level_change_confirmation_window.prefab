@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d559e66908e14b64cabb28f4df08009c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 00_meadow_scene
+  nextSceneName: 
 --- !u!222 &359740635905917132
 CanvasRenderer:
   m_ObjectHideFlags: 0
