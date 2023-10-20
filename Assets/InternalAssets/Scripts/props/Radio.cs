@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Radio : MonoBehaviour
 {
+    [SerializeField] private GameObject textBubble;
+
     private AudioSource asRadio;
     private ParticleSystem psNotes;
 
@@ -15,6 +17,11 @@ public class Radio : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (textBubble.activeSelf)
+        {
+            textBubble.SetActive(false);
+        }
+
         if (isPlaying)
         {
             isPlaying = false;

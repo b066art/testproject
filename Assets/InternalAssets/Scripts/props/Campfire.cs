@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Campfire : MonoBehaviour
 {
+    [SerializeField] private GameObject textBubble;
+
     private Animator aFire;
     private ParticleSystem psSmoke;
 
@@ -15,6 +17,11 @@ public class Campfire : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (textBubble.activeSelf)
+        {
+            textBubble.SetActive(false);
+        }
+        
         if (isBurning)
             {
                 isBurning = false;
